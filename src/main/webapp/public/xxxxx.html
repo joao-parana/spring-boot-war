@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="oi"></div>
+	<script>
+		var ws = new WebSocket("ws://localhost:8080/teste");
+		ws.onclose = function(x) {
+			console.log("•••• closed")
+		}
+		ws.onopen = function(x) {
+			console.log("•••• conectei")
+		}
+		ws.onmessage = function(x) {
+			console.log("•••• onmessage com msg = '" + x + "'")
+		}
+	</script>
+</body>
+</html>
